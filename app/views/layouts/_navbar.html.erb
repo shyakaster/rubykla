@@ -6,19 +6,18 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link <%= yield(:home_active)%>" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#signup">Contact Us</a>
       </li>
       <li class="nav-item">
-        <!-- <a class="nav-link" href="#events">Events</a> -->
-
+        <a class="nav-link" href="#events">Events</a>
       </li>
         <li class="nav-item">
         <!-- <a class="nav-link" href="#">Blog</a> -->
-        <%= link_to 'Blog', posts_url, class: 'nav-link'%>
+        <%= link_to 'Blog', posts_url, class: "nav-link #{yield(:blog_active)} "%>
       </li>
     </ul>
    <!--  <span class="navbar-text">
