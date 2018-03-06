@@ -1,6 +1,11 @@
 <% title @post.title %>
 <% provide(:blog_active,'active')%>
 <div class="row">
+  <p><%= link_to 'Edit', edit_author_post_path(@post), class:'btn btn-md btn-warning'%></p>
+  <p><%= link_to 'Remove', author_post_path(@post), method: :delete, data:
+  {confirm:'Are you sure ?'}, class:'btn btn-md btn-danger'%></p>
+</div>
+<div class="row">
   <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-xs-center">
     <h1><%= @post.title%></h1>
     <p><%= @post.display_day_published%></p>

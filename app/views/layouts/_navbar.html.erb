@@ -1,24 +1,30 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-danger">
-  <%= link_to 'Ruby Kampala Community', root_url, class: 'navbar-brand'%>
+  <%= link_to 'The Kampala Ruby Community', root_url, class: 'navbar-brand'%>
   <!-- <a class="navbar-brand" href="#">Ruby Kampala Community</a> -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
+
       <li class="nav-item">
         <a class="nav-link <%= yield(:home_active)%>" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
+
       <li class="nav-item">
-        <a class="nav-link" href="#signup">Contact Us</a>
+        <!-- <a class="nav-link" href="#">Blog</a> -->
+        <%= link_to 'Events', posts_path, class: "nav-link #{yield(:blog_active)} "%>
+      </li>
+
+      <li class="nav-item">
+        <%= link_to 'My Events', author_posts_path, class: "nav-link #{yield(
+        :author)}"%>
+        <!-- <a class="nav-link" href="#signup">Contact Us</a> -->
       </li>
      <!--  <li class="nav-item">
         <a class="nav-link" href="#events">Events</a>
       </li> -->
-        <li class="nav-item">
-        <!-- <a class="nav-link" href="#">Blog</a> -->
-        <%= link_to 'Events', posts_url, class: "nav-link #{yield(:blog_active)} "%>
-      </li>
+
     </ul>
    <!--  <span class="navbar-text">
       Navbar text with an inline element
