@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :authors
   root "blog/pages#show", page: "index"
 
-  namespace :author do
+  namespace :authors do
     resources :posts
   end
 

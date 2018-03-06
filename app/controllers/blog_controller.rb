@@ -1,3 +1,3 @@
-class BlogController < ApplicationRecord
+class BlogController < ApplicationController
 
 end

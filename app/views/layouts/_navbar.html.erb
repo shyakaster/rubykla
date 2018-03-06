@@ -15,12 +15,19 @@
         <!-- <a class="nav-link" href="#">Blog</a> -->
         <%= link_to 'Events', posts_path, class: "nav-link #{yield(:blog_active)} "%>
       </li>
+      <% if author_signed_in? %>
+        <li class="nav-item">
+          <%= link_to 'My Events', authors_posts_path, class: "nav-link #{yield(
+          :author)}"%>
+          <!-- <a class="nav-link" href="#signup">Contact Us</a> -->
+        </li>
+         <li class="nav-item">
+          <%= link_to 'Log Out', destroy_author_session_path, method: :delete, class: "nav-link #{yield(
+          :author)}"%>
+          <!-- <a class="nav-link" href="#signup">Contact Us</a> -->
+        </li>
+      <% end %>
 
-      <li class="nav-item">
-        <%= link_to 'My Events', author_posts_path, class: "nav-link #{yield(
-        :author)}"%>
-        <!-- <a class="nav-link" href="#signup">Contact Us</a> -->
-      </li>
      <!--  <li class="nav-item">
         <a class="nav-link" href="#events">Events</a>
       </li> -->
