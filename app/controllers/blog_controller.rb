@@ -1,0 +1,3 @@
+class BlogController < ApplicationRecord
+
+end

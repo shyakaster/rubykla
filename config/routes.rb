@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  root "blog/pages#show", page: "index"
 
-  root "pages#show", page: "index"
+  namespace :author do
+    resources :posts
+  end
 
- get "/pages/:page" => "pages#show"
-
- resources :posts
-
+   scope module: 'blog' do
+      get 'posts' => 'posts#index', as: :posts
+      get 'posts/:id' => 'posts#show', as: :post
+      get 'pages/:page' => 'pages#show'
+    end
 end
