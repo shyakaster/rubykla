@@ -1,4 +1,22 @@
+# == Schema Information
+#
+# Table name: posts
+#
+#  id               :integer          not null, primary key
+#  title            :string
+#  body             :text
+#  description      :text
+#  author_id        :integer
+#  banner_image_url :string
+#  slug             :string
+#  created_at       :datetime
+#  updated_at       :datetime
+#  published        :boolean          default(FALSE)
+#  published_at     :datetime
+#
+
 class Post < ApplicationRecord
+   before_save :set_publish_val
 
   extend FriendlyId
 
@@ -6,7 +24,8 @@ class Post < ApplicationRecord
 
    belongs_to :author
 
-  scope :most_recent, -> { order(id: :desc)}
+  scope :most_recent, -> { order(published_at: :desc)}
+  scope :published, -> { where(published: true)}
 
 
 
@@ -15,6 +34,17 @@ class Post < ApplicationRecord
   end
 
   def display_day_published
-    "Published: #{created_at.strftime('%-b %-d %Y')}"
+    "Published: #{published_at.strftime('%-b %-d %Y')}"
+  end
+
+  def set_publish_val
+    self.published_at = Time.now
+  end
+
+  def publish
+    update(published: true,published_at: Time.now)
+  end
+  def unpublish
+    update(published: false,published_at: nil)
   end
 end
