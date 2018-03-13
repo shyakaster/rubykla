@@ -17,6 +17,7 @@
 
 class Post < ApplicationRecord
    # before_save :set_publish_val
+  acts_as_taggable # Alias for acts_as_taggable_on :tags
 
   extend FriendlyId
 
