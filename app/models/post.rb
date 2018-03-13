@@ -16,7 +16,7 @@
 #
 
 class Post < ApplicationRecord
-   before_save :set_publish_val
+   # before_save :set_publish_val
 
   extend FriendlyId
 
@@ -34,12 +34,16 @@ class Post < ApplicationRecord
   end
 
   def display_day_published
-    "Published: #{published_at.strftime('%-b %-d %Y')}"
+    if published_at.present?
+     "Published: #{published_at.strftime('%-b %-d %Y')}"
+    else
+     "Not yet published"
+    end
   end
 
-  def set_publish_val
-    self.published_at = Time.now
-  end
+  # def set_publish_val
+  #   self.published_at = Time.now
+  # end
 
   def publish
     update(published: true,published_at: Time.now)
