@@ -22,13 +22,12 @@ gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
 gem 'jquery-rails'
 gem 'friendly_id', '~> 5.1.0'
- gem 'byebug'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 
 gem 'annotate'
 gem 'will_paginate', '~> 3.1.0'
-gem 'acts-as-taggable-on', '~> 4.0'
+gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

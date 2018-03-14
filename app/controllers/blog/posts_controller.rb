@@ -3,14 +3,24 @@ module Blog
     # GET /posts
     # GET /posts.json
     def index
-      @posts = Post.most_recent.published.paginate(:page => params[:page], :per_page => 3)
+      if params[:tag].present?
+         @posts = storage.most_recent.tagged_with(params[:tag]).paginate(:page => params[:page], :per_page => 3)
+      else
+        @posts = storage.most_recent.paginate(:page => params[:page], :per_page => 3)
+      end
     end
 
     # GET /posts/1
     # GET /posts/1.json
     def show
-      @post = Post.friendly.find(params[:id])
+      @post = storage.friendly.find(params[:id])
+    end
+
+    private
+
+    def storage
+      Post.published
     end
   end
-
 end
+
