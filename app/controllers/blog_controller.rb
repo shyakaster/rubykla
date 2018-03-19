@@ -1,3 +1,4 @@
 class BlogController < ApplicationController
 
+
 end
