@@ -92,13 +92,13 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :mailgun
   config.action_mailer.mailgun_settings = {domain: 'rubykampala.com'}
 # SMTP settings for gmail
-  # config.action_mailer.smtp_settings = {
-  #  :address              => "smtp.gmail.com",
-  #  :port                 => 587,
-  #  :user_name            => ENV['gmail_username'],
-  #  :password             => ENV['gmail_password'],
-  #  :authentication       => "plain",
-  # :enable_starttls_auto => true
-  # }
+  config.action_mailer.smtp_settings = {
+   :address              => "smtp.mailgun.org",
+   :port                 => 587,
+   # :domain               => "https://api.mailgun.net/v3/rubykampala.com",
+   :user_name            => ENV['MAILGUN_SMTP_LOGIN'],
+   :password             => ENV['MAILGUN_SMTP_PASSWORD'],
+   :authentication       => "plain"
+  }
 
 end
