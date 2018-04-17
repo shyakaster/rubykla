@@ -1,40 +1,29 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-danger">
-  <%= link_to 'The Kampala Ruby Community', root_url, class: 'navbar-brand'%>
-  <!-- <a class="navbar-brand" href="#">Ruby Kampala Community</a> -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarText">
-    <ul class="navbar-nav mr-auto">
-
-      <li class="nav-item">
-        <a class="nav-link <%= yield(:home_active)%>" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-
-      <li class="nav-item">
-        <!-- <a class="nav-link" href="#">Blog</a> -->
-        <%= link_to 'Events', posts_path, class: "nav-link #{yield(:blog_active)} "%>
-      </li>
-      <% if author_signed_in? %>
-        <li class="nav-item">
-          <%= link_to 'My Events', authors_posts_path, class: "nav-link #{yield(
-          :author)}"%>
-          <!-- <a class="nav-link" href="#signup">Contact Us</a> -->
-        </li>
-         <li class="nav-item">
-          <%= link_to 'Log Out', destroy_author_session_path, method: :delete, class: "nav-link #{yield(
-          :author)}"%>
-          <!-- <a class="nav-link" href="#signup">Contact Us</a> -->
-        </li>
-      <% end %>
-
-     <!--  <li class="nav-item">
-        <a class="nav-link" href="#events">Events</a>
-      </li> -->
-
-    </ul>
-   <!--  <span class="navbar-text">
-      Navbar text with an inline element
-    </span> -->
-  </div>
+    <%= link_to 'The Kampala Ruby Community', root_url, class: 'navbar-brand'%>
+        <!-- <a class="navbar-brand" href="#">Ruby Kampala Community</a> -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link <%= yield(:home_active)%>" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <!-- <a class="nav-link" href="#">Blog</a> -->
+                    <%= link_to 'Events', posts_path, class: "nav-link #{yield(:blog_active)} "%>
+                </li>
+                <% if author_signed_in? %>
+                    <li class="nav-item dropdown author-nav">
+                        <a class="nav-link dropdown-toggle <%= yield(:author) %>" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Author
+          </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <%= link_to 'My Events', authors_posts_path, class: "dropdown-item" %>
+                            <%= link_to 'Account', authors_account_path, class: "dropdown-item" %>
+                                <%= link_to 'Logout', destroy_author_session_path, method: :delete, class: "dropdown-item" %>
+                        </div>
+                        <% end %>
+            </ul>
+        </div>
 </nav>
