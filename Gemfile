@@ -39,6 +39,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bootstrap', '~> 4.0.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+ gem "figaro"
 gem 'simple_form'
 gem 'slim-rails'
 # gem 'bootstrap-sass'
