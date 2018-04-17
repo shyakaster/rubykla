@@ -39,7 +39,13 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bootstrap', '~> 4.0.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'simple_form'
+gem 'slim-rails'
+# gem 'bootstrap-sass'
+gem 'mail_form'
+group :development do
+  gem 'letter_opener_web'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

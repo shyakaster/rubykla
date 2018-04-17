@@ -13,6 +13,10 @@
                     <!-- <a class="nav-link" href="#">Blog</a> -->
                     <%= link_to 'Events', posts_path, class: "nav-link #{yield(:blog_active)} "%>
                 </li>
+                <li class="nav-item">
+                    <!-- <a class="nav-link" href="#">Blog</a> -->
+                    <%= link_to 'Contact Us', new_contact_path, class: "nav-link #{yield(:blog_active)} "%>
+                </li>
                 <% if author_signed_in? %>
                     <li class="nav-item dropdown author-nav">
                         <a class="nav-link dropdown-toggle <%= yield(:author) %>" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
