@@ -11,7 +11,7 @@
   <%= simple_form_for @contact, html:{ class: 'form-horizontal'}, url: new_contact_path do |f|%>
       <%= f.input :name, required: true%>
       <%= f.input :email, required: true%>
-      <%= f.input :message, as: :text, required: false, input_html:{rowa: 10}, hint: 'Max 2000 characters' %>
+      <%= f.input :message, as: :text, required: true, input_html:{rowa: 10}, hint: 'Max 2000 characters' %>
       <div class="form-actions">
         <%= f.button :submit, 'Send message', class: 'btn btn-primary' %>
       </div>
