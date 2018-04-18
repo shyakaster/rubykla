@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   devise_for :authors
   root "blog/pages#show", page: "index"
+  resources :leads
 
   namespace :authors do
     get '/account' => 'accounts#edit', as: :account
@@ -21,5 +22,6 @@ Rails.application.routes.draw do
       get 'posts' => 'posts#index', as: :posts
       get 'posts/:id' => 'posts#show', as: :post
       get 'pages/:page' => 'pages#show'
+      post 'pages/:page'=> 'pages#create'
     end
 end
