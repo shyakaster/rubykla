@@ -18,11 +18,7 @@ module Blog
     private
 
     def lead_params
-<<<<<<< HEAD
-      params.require(:lead).permit(:email, :name)
-=======
       params.require(:lead).permit(:email,:name)
->>>>>>> send_email_to_new_user
     end
   end
 
