@@ -8,7 +8,7 @@ module Blog
         @lead = Lead.new lead_params
         if @lead.save
           cookies[:saved_lead] = true
-           ApplicationMailer.welcome_email(@lead).deliver
+           # Contact.welcome_email(@lead).deliver
           redirect_to root_path
         else
           redirect_to root_path, notice: 'Failed to save, check that all fields are filled'
