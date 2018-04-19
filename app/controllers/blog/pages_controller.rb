@@ -11,7 +11,7 @@ module Blog
            ApplicationMailer.welcome_email(@lead).deliver
           redirect_to root_path
         else
-          redirect_to root_path, alert: 'Failed to save'
+          redirect_to root_path, notice: 'Failed to save, check that all fields are filled'
         end
     end
 

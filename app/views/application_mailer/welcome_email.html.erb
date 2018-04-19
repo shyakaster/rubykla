@@ -7,7 +7,7 @@
 
     <p>
       You have successfully signed up to rubykampala.com,
-      your name is: <%= @lead.name %>. and your email is <%= @lead.email%><br/>
+      your name is: <% if @lead.name%><%= @lead.name %>.<%end%> and your email is <%= @lead.email%><br/>
     </p>
 
     <p>Thanks for joining and have a great day!</p>
