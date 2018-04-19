@@ -9,7 +9,7 @@ class Contact < MailForm::Base
     {
       subject: 'Ruby Kampala Contact Form',
       to: 'alexshyaka@therailsshop.club',
-      from: %("#{name}" <#{email}>)
+      from: %("Name and email of sender: #{name}" <#{email}>)
     }
   end
 end

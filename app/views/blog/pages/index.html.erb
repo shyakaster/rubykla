@@ -53,19 +53,20 @@
 
     <section id="signup">
         <div class="container">
-            <h2>Enter your email and we shall send you updates about the ruby community.</h2>
+            <h2>Enter your email for updates about the ruby community.</h2>
             <p class="lead">We promise not to spam you.</p>
             <div class="row">
                 <div class="col-sm-8 offset-sm-2">
                     <% if cookies[:saved_lead]%>
-                        Thanks for signing up!
+                        <center><p class="lead">Thanks for signing up!</p></center>
                     <%else%>
                         <%= form_for @lead,:url => url_for(:controller => 'blog/pages', :action => 'create') do |f| %>
                             <div class="input-group">
+                                <%= f.text_field :name, class:'form-control input-lg', placeholder: 'Put your real name here'%>
                                 <%= f.text_field :email, class:'form-control input-lg', placeholder: 'Put your real email address here'%>
                                 <!-- <input type="text" class="form-control input-lg" placeholder="Put your real address in here..."> -->
                                 <span class="input-group-btn">
-                                    <%= f.submit 'Handcraft', class: 'btn btn-warning btn-lg'%>
+                                    <%= f.submit 'Drop it in', class: 'btn btn-warning btn-lg'%>
                                     <!-- <button class="btn btn-warning btn-lg" type="button">Handcraft it</button> -->
                                 </span>
                             </div>

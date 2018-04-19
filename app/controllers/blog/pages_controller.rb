@@ -17,7 +17,7 @@ module Blog
     private
 
     def lead_params
-      params.require(:lead).permit(:email)
+      params.require(:lead).permit(:email, :name)
     end
   end
 
