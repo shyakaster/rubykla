@@ -12,4 +12,5 @@ class Contact < MailForm::Base
       from: %("Name and email of sender: #{name}" <#{email}>)
     }
   end
+
 end
