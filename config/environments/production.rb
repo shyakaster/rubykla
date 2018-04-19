@@ -89,16 +89,19 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.delivery_method = :mailgun
-  config.action_mailer.mailgun_settings = {domain: 'rubykampala.com'}
-# SMTP settings for gmail
-  config.action_mailer.smtp_settings = {
-   :address              => "smtp.mailgun.org",
-   :port                 => 587,
-   # :domain               => "https://api.mailgun.net/v3/rubykampala.com",
-   :user_name            => ENV['MAILGUN_SMTP_LOGIN'],
-   :password             => ENV['MAILGUN_SMTP_PASSWORD'],
-   :authentication       => "plain"
-  }
+#   config.action_mailer.delivery_method = :mailgun
+#   config.action_mailer.mailgun_settings = {domain: 'rubykampala.com'}
+# # SMTP settings for gmail
+#   config.action_mailer.smtp_settings = {
+#    :address              => "smtp.mailgun.org",
+#    :port                 => 587,
+#    # :domain               => "https://api.mailgun.net/v3/rubykampala.com",
+#    :user_name            => ENV['MAILGUN_SMTP_LOGIN'],
+#    :password             => ENV['MAILGUN_SMTP_PASSWORD'],
+#    :authentication       => "plain"
+#   }
+  config.action_mailer.delivery_method = :smtp
+
+end
 
 end
