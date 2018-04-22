@@ -7,7 +7,7 @@
 
     .form-actions
       = f.button :submit, 'Send message', class: 'btn btn-primary' -->
-<div class="container">
+<div class="container contact-page">
   <%= simple_form_for @contact, html:{ class: 'form-horizontal'}, url: new_contact_path do |f|%>
       <%= f.input :name, required: true%>
       <%= f.input :email, required: true%>
@@ -17,3 +17,4 @@
       </div>
   <%end%>
 </div>
+<%= render 'layouts/footer'%>
